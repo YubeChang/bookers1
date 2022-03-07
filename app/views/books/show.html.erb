@@ -1,5 +1,10 @@
-<p>Title:<%= @book.title %></p>
-<p>Body:<%= @book.body %></p>
+<p>
+    <strong>Title</strong>:<%= @book.title %>
+</p>
+<p>
+    <strong>Body</strong>:<%= @book.body %>
+</p>
+
 
 <%= link_to 'Edit', edit_book_path(@book.id) %> <!-- 書かなくても問題ないけど書けるなら明示的に引数を書く-->
 | <!-- ただ打つだけでテキスト表示できるのか...気づかなかった-->
