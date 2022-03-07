@@ -3,22 +3,24 @@ class BooksController < ApplicationController
   end
 
   def index
- @book = Book.new　#埋め込みnew用の空のモデルインスタンス
+ @book = Book.new #投稿フォーム用の空のモデルインスタンス生成
   end
 
   def create
-    book = Book.new(list_params)
-
+    book = Book.new(book_params)
+    book.save
+    redirect_to book_path(book.id)
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def edit
   end
 
   private
-  def list_params
-    params.require(:Book).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
