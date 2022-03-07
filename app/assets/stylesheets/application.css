@@ -21,3 +21,8 @@ body {
 p{
   margin: 33px
 }
+
+  .notice {
+    color: green
+  }
+
